@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tree Plantation</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f3;
+        }
+
+
+        
+
+        .tree-plan {
+            position: relative;
+            width: 100%;
+            min-height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+
+        .treeplan-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+       
+
+        .tree-plan::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.42);
+            z-index: 1;
+        }
+
+
+        
+        .tree-plan-head {
+            position: absolute;
+            top: 45px;
+            left: 20px;
+            right: 20px;
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            text-shadow: 2px 3px 8px black;
+            z-index: 2;
+        }
+
+        .tree-plan-sub {
+            position: absolute;
+            top: 115px;
+            left: 20px;
+            right: 20px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-weight: normal;
+            text-shadow: 2px 2px 5px black;
+            z-index: 2;
+        }
+
+
+       
+
+        .card-parent {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 150px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card-1,
+        .card-2,
+        .card-3 {
+
+            min-height: 320px;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card-1:hover,
+        .card-2:hover,
+        .card-3:hover {
+
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.55);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        
+        .tree-img-1,
+        .tree-img-2,
+        .tree-img-3 {
+
+            width: 180px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .tree-img-1:hover,
+        .tree-img-2:hover,
+        .tree-img-3:hover {
+
+            transform: scale(1.08);
+        }
+
+
+       
+
+        .head-1,
+        .head-2,
+        .head-3 {
+
+            color: white;
+            font-size: 22px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .tree-text,
+        .tree-text-2,
+        .tree-text-3 {
+
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+      
+
+        .steps-section {
+
+            width: 100%;
+            padding: 60px 30px;
+            text-align: center;
+            background-color: #f1f8f3;
+        }
+
+        .steps-section h2,
+        .tips-section h2 {
+
+            color: darkgreen;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+
+        .steps-parent {
+
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+
+        .step-card {
+
+            min-height: 180px;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .step-card:hover {
+
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .step-card h3 {
+
+            color: forestgreen;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .step-card p {
+
+            color: #444;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+
+        
+
+        .tips-section {
+
+            width: 100%;
+            padding: 60px 30px;
+            text-align: center;
+            background-color: white;
+        }
+
+
+        .tips-parent {
+
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+
+        .tips-card {
+
+            min-height: 220px;
+            padding: 30px 25px;
+            background-color: #f1f8f3;
+            border-radius: 18px;
+            border: 1px solid #d5ead8;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .tips-card:hover {
+
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .tips-card h3 {
+
+            color: forestgreen;
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .tips-card p {
+
+            color: #444;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+
+        .btn1 {
+
+            position: fixed;
+            right: 25px;
+            bottom: 30px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: darkgreen;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .btn1:hover {
+
+            background-color: darkgreen;
+            color: white;
+            transform: translateX(5px);
+        }
+        .tip-1:after{
+            content:"\1F331"
+        }
+        .tip-2:after{
+            content:"\1F33F"
+        }
+        .tip-3:after{
+            content:"\1F4A7"
+        }
+        .tip-4:after{
+            content:"\1F333"
+        }
+        .tree-1:after{
+            content:"\1F331"
+        }
+        .tree-2:after{
+            content:"\1F4CD"
+        }
+        .tree-3:after{
+            content:" \1F33F"
+    
+        }
+        .tree-4:after{
+            content:"\1F4A7"
+        }
+        .tree-5:after{
+            content:"\1F6E1"
+          
+            
+        }
+        .tree-6:after{
+            content:"\1F9E1"
+        }
+        
+
+
+        @media (max-width: 992px) {
+
+            .tree-plan {
+
+                min-height: 850px;
+            }
+
+            .tree-plan-head {
+
+                font-size: 36px;
+
+                top: 40px;
+            }
+
+            .tree-plan-sub {
+
+                top: 115px;
+
+                font-size: 18px;
+            }
+
+            .card-parent {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                max-width: 700px;
+
+                margin-top: 180px;
+            }
+
+            .card-3 {
+
+                grid-column: 1 / 3;
+
+                max-width: 320px;
+
+                width: 100%;
+
+                justify-self: center;
+            }
+
+            .steps-parent {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tips-parent {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+      
+
+        @media (max-width: 600px) {
+
+            .tree-plan {
+
+                min-height: auto;
+
+                padding: 30px 20px 50px;
+
+                display: block;
+            }
+
+            .treeplan-img {
+
+                height: 100%;
+
+                min-height: 1100px;
+            }
+
+            .tree-plan-head {
+
+                position: relative;
+
+                top: auto;
+                left: auto;
+                right: auto;
+
+                padding-top: 20px;
+
+                font-size: 28px;
+
+                line-height: 1.3;
+            }
+
+            .tree-plan-sub {
+
+                position: relative;
+
+                top: auto;
+                left: auto;
+                right: auto;
+
+                margin-top: 15px;
+
+                font-size: 16px;
+
+                line-height: 1.5;
+            }
+
+
+            .card-parent {
+
+                position: relative;
+
+                top: auto;
+                left: auto;
+
+                margin-top: 40px;
+
+                width: 100%;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 25px;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3 {
+
+                width: 100%;
+
+                max-width: 330px;
+
+                min-height: 300px;
+            }
+
+
+            .card-3 {
+
+                grid-column: auto;
+
+                max-width: 330px;
+            }
+
+
+            .tree-img-1,
+            .tree-img-2,
+            .tree-img-3 {
+
+                width: 170px;
+
+                height: 120px;
+            }
+
+
+            .head-1,
+            .head-2,
+            .head-3 {
+
+                font-size: 20px;
+            }
+
+
+            .tree-text,
+            .tree-text-2,
+            .tree-text-3 {
+
+                font-size: 15px;
+            }
+
+
+            /* Steps */
+
+            .steps-section {
+
+                padding: 45px 20px;
+            }
+
+            .steps-section h2,
+            .tips-section h2 {
+
+                font-size: 26px;
+
+                margin-bottom: 30px;
+            }
+
+
+            .steps-parent {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .step-card {
+
+                width: 100%;
+
+                min-height: auto;
+
+                padding: 25px 20px;
+            }
+
+
+            /* Tips */
+
+            .tips-section {
+
+                padding: 45px 20px;
+            }
+
+
+            .tips-parent {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .tips-card {
+
+                width: 100%;
+
+                min-height: auto;
+
+                padding: 28px 20px;
+            }
+
+
+            
+
+            .btn1 {
+
+                width: 50px;
+
+                height: 50px;
+
+                right: 18px;
+
+                bottom: 20px;
+
+                font-size: 25px;
+            }
+        }
+
+
+
+        @media (max-width: 400px) {
+
+            .tree-plan-head {
+
+                font-size: 24px;
+            }
+
+            .tree-plan-sub {
+
+                font-size: 15px;
+            }
+
+            .card-1,
+            .card-2,
+            .card-3 {
+
+                max-width: 290px;
+            }
+
+            .tree-img-1,
+            .tree-img-2,
+            .tree-img-3 {
+
+                width: 150px;
+
+                height: 110px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+  
+    <section class="tree-plan">
+
+        <img src="img2-home.jpg" class="treeplan-img" alt="Tree Plantation">
+
+        <h1 class="tree-plan-head">
+            PLANT TREES, GROW A BETTER FUTURE
+        </h1>
+
+        <p class="tree-plan-sub">
+            “Every tree we plant today creates a healthier tomorrow.”
+        </p>
+
+
+        <!-- BENEFIT CARDS -->
+
+        <div class="card-parent">
+
+
+            <div class="card-1">
+
+                <img src="treeplan-img.jpg"
+                     class="tree-img-1"
+                     alt="Clean Air">
+
+                <h2 class="head-1">
+                    CLEAN AIR
+                </h2>
+
+                <p class="tree-text">
+                    Trees absorb carbon dioxide and release oxygen,
+                    helping us breathe cleaner air.
+                </p>
+
+            </div>
+
+
+            <div class="card-2">
+
+                <img src="protect-water.jpg"
+                     class="tree-img-2"
+                     alt="Protect Water">
+
+                <h2 class="head-2">
+                    PROTECT WATER
+                </h2>
+
+                <p class="tree-text-2">
+                    Trees help conserve water and protect soil
+                    from erosion.
+                </p>
+
+            </div>
+
+
+            <div class="card-3">
+
+                <img src="climate-img.jpg"
+                     class="tree-img-3"
+                     alt="Climate Change">
+
+                <h2 class="head-3">
+                    CLIMATE CHANGE
+                </h2>
+
+                <p class="tree-text-3">
+                    Trees absorb carbon and help keep our
+                    planet cooler.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="steps-section">
+
+        <h2>
+            HOW TO PLANT A TREE
+        </h2>
+
+
+        <div class="steps-parent">
+
+
+            <div class="step-card">
+
+                <h3 class="tip-1">
+                    01. CHOOSE 
+                </h3>
+
+                <p>
+                    Choose a suitable native tree for your
+                    local climate and environment.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <h3 class="tip-2">
+                    02. PLANT 
+                </h3>
+
+                <p>
+                    Dig a suitable hole and plant the tree
+                    carefully in healthy soil.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <h3 class="tip-3">
+                    03. CARE 
+                </h3>
+
+                <p>
+                    Water the tree regularly and protect
+                    it from damage.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <h3 class="tip-4">
+                    04. GROW 
+                </h3>
+
+                <p>
+                    Continue caring for the tree until
+                    it becomes strong and healthy.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   
+
+    <section class="tips-section">
+
+        <h2>
+            TREE PLANTATION TIPS
+        </h2>
+
+
+        <div class="tips-parent">
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-1">
+                    01. Choose the Right Tree 
+                </h3>
+
+                <p>
+                    Choose a tree that is suitable for
+                    your local climate and soil.
+                </p>
+
+            </div>
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-2">
+                    02. Select a Good Location 
+                </h3>
+
+                <p>
+                    Plant the tree in a place with enough
+                    sunlight and space to grow.
+                </p>
+
+            </div>
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-3">
+                    03. Prepare the Soil
+                </h3>
+
+                <p>
+                    Loosen the soil and add compost or
+                    organic manure before planting.
+                </p>
+
+            </div>
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-4">
+                    04. Water Regularly 
+                </h3>
+
+                <p>
+                    Water the plant regularly, especially
+                    during hot and dry weather.
+                </p>
+
+            </div>
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-5">
+                    05. Protect the Plant 
+                </h3>
+
+                <p>
+                    Protect young plants from animals,
+                    strong winds and damage.
+                </p>
+
+            </div>
+
+
+            <div class="tips-card">
+
+                <h3 class="tree-6">
+                    06. Take Care of the Tree 
+                </h3>
+
+                <p>
+                    Remove weeds and provide proper care
+                    until the tree grows strong.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEXT PAGE BUTTON -->
+
+        <a href="waterconservation.html"
+           class="btn1"
+           aria-label="Go to waterconservation Page">
+            →
+        </a>
+
+    </section>
+
+
+</body>
+
+</html>

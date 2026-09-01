@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save Nature</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-image: url("img2-home.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+      
+
+        .savenature-content {
+            position: relative;
+            min-height: 100vh;
+            padding: 60px 40px;
+            overflow: hidden;
+        }
+
+        .savenature-1-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .savenature-content::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 40, 70, 0.35);
+            z-index: -1;
+        }
+
+        .text-nature {
+            font-size: 50px;
+            text-align: left;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 8px black;
+        }
+
+        .text-2-nature {
+            color: lightgreen;
+            font-size: 25px;
+            margin-bottom: 70px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+       
+
+        .why-section {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .text-3-nature {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .text-4-nature {
+            font-size: 18px;
+            line-height: 1.7;
+            text-shadow: 2px 2px 4px black;
+        }
+
+
+        .card-parent-savenature {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card-1,
+        .card-2,
+        .card-3,
+        .card-4,
+        .card-5,
+        .card-6 {
+
+            width: 350px;
+            min-height: 390px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,0.8);
+            border-radius: 18px;
+            background: rgba(0, 70, 100, 0.30);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card-1:hover,
+        .card-2:hover,
+        .card-3:hover,
+        .card-4:hover,
+        .card-5:hover,
+        .card-6:hover {
+
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+       
+
+        .animal,
+        .pollinator,
+        .river-img,
+        .forest-img,
+        .plastic-img,
+        .tree-img {
+
+            width: 220px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: 0.4s;
+        }
+
+        .animal:hover,
+        .pollinator:hover,
+        .river-img:hover,
+        .forest-img:hover,
+        .plastic-img:hover,
+        .tree-img:hover {
+
+            transform: scale(1.08);
+        }
+
+
+        .save-animal,
+        .save-pollinator,
+        .river,
+        .forest,
+        .plastic,
+        .tree {
+
+            color: yellow;
+            font-size: 22px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .forest-text,
+        .pollinator-text,
+        .river-text,
+        .forest-text2,
+        .plastic-text,
+        .tree-text {
+
+            color: white;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+
+        .tips-section {
+
+            max-width: 1000px;
+            margin: 90px auto 50px;
+            padding: 35px;
+            text-align: center;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+        }
+
+        .tips-section h2 {
+
+            color: yellow;
+            font-size: 30px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .tips {
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .tip-box {
+
+            width: 200px;
+            padding: 20px;
+            background: rgba(0,100,80,0.35);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: 0.3s;
+        }
+
+        .tip-box:hover {
+
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .tip-box h3 {
+
+            color: lightgreen;
+            margin-bottom: 10px;
+        }
+
+        .tip-box p {
+
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+       
+
+        .nature-quote {
+
+            text-align: center;
+            max-width: 900px;
+            margin: 70px auto;
+            padding: 30px;
+            font-size: 25px;
+            font-style: italic;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+       
+
+        .last-section {
+
+            text-align: center;
+            max-width: 900px;
+            margin: 50px auto 100px;
+            padding: 35px;
+            background: rgba(0,80,60,0.45);
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+
+        .last-section h2 {
+
+            color: lightgreen;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .last-section p {
+
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .last-btn {
+
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: lightgreen;
+            color: darkgreen;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .last-btn:hover {
+
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+       
+
+        .btn {
+
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-size: 28px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .btn:hover {
+
+            background-color: darkgreen;
+            color: white;
+            transform: translateX(5px);
+        }
+        .btn:before{
+            content:"\2192"
+        }
+        .save-animal:before{
+            content:"\1F42F"
+        }
+        .save-pollinator:before{
+            content:"\1F41D"
+        }
+        .river:before{
+            content:"\1F4A7"
+        }
+        .forest:before{
+            content:"\1F333"
+        }
+        .plastic:before{
+            content:"\267B"
+        }
+        .tree:before{
+            content:"\1F331"
+        }
+        .nature-quote:after{
+            content:"\1F30D"
+        }
+        .save-water:before{
+            content:"\1F4A7"
+        }
+        .save-energy:before{
+            content:"\1F4A1"
+        }
+        .reduce-tip:before{
+            content:"\267B"
+        }
+        .plant-tree:before{
+            content:"\1F333"
+        }
+        .save-nature-text:before{
+            content:"\1F33F"
+        }
+        .part-change:before{
+            content:"\1F331"
+        }
+        .last-btn:after{
+            content:"\267B"
+        }
+
+
+
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+
+            .savenature-content {
+
+                padding: 40px 25px;
+            }
+
+            .text-nature {
+
+                font-size: 42px;
+            }
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4,
+            .card-5,
+            .card-6 {
+
+                width: 42%;
+            }
+
+        }
+
+ 
+
+        @media (max-width: 600px) {
+
+            .savenature-content {
+
+                padding: 30px 15px;
+
+                overflow: hidden;
+            }
+
+            .text-nature {
+
+                font-size: 35px;
+
+                text-align: center;
+            }
+
+            .text-2-nature {
+
+                font-size: 18px;
+
+                text-align: center;
+
+                margin-bottom: 50px;
+            }
+
+            .why-section {
+
+                margin-bottom: 50px;
+            }
+
+            .text-3-nature {
+
+                font-size: 23px;
+            }
+
+            .text-4-nature {
+
+                font-size: 15px;
+            }
+
+            .card-parent-savenature {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 25px;
+            }
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4,
+            .card-5,
+            .card-6 {
+
+                width: 95%;
+
+                max-width: 350px;
+
+                min-height: 380px;
+            }
+
+            .animal,
+            .pollinator,
+            .river-img,
+            .forest-img,
+            .plastic-img,
+            .tree-img {
+
+                width: 200px;
+
+                height: 160px;
+            }
+
+            .tips-section {
+
+                padding: 25px 15px;
+
+                margin-top: 60px;
+            }
+
+            .tips {
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .tip-box {
+
+                width: 90%;
+            }
+
+            .nature-quote {
+
+                font-size: 20px;
+
+                margin: 50px auto;
+            }
+
+            .cta-section {
+
+                padding: 25px 15px;
+
+                margin-bottom: 80px;
+            }
+
+            .cta-section h2 {
+
+                font-size: 24px;
+            }
+
+            .btn {
+
+                right: 20px;
+
+                bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="savenature-content">
+
+    <img src="img2-home.jpg" class="savenature-1-img">
+
+
+    <!-- HERO -->
+
+    <h1 class="text-nature">
+        SAVE NATURE
+    </h1>
+
+    <h2 class="text-2-nature">
+        Protect Nature, Preserve Our Future
+    </h2>
+
+
+    <!-- WHY SAVE NATURE -->
+
+    <div class="why-section">
+
+        <h3 class="text-3-nature">
+            WHY SAVE NATURE?
+        </h3>
+
+        <p class="text-4-nature">
+
+            Nature gives us clean air, fresh water, food,
+            shelter and a healthy environment.
+            Protecting nature is our responsibility
+            for a better future.
+
+        </p>
+
+    </div>
+
+
+    <!-- CARDS -->
+
+    <div class="card-parent-savenature">
+
+
+        <!-- CARD 1 -->
+
+        <div class="card-1">
+
+            <img src="forest-animal.jpg" class="animal">
+
+            <h2 class="save-animal">
+                SAVE WILDLIFE
+            </h2>
+
+            <p class="forest-text">
+
+                Forests are home to many living beings.
+                Protect animals and their habitats
+                for a greener and safer future.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="card-2">
+
+            <img src="save-pollinators.jpg" class="pollinator">
+
+            <h2 class="save-pollinator">
+                 SAVE POLLINATORS
+            </h2>
+
+            <p class="pollinator-text">
+
+                Bees and butterflies help plants grow.
+                Protecting pollinators helps maintain
+                nature's balance.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="card-3">
+
+            <img src="river.jpg" class="river-img">
+
+            <h2 class="river">
+                 CLEAN WATER
+            </h2>
+
+            <p class="river-text">
+
+                Keep rivers, lakes and oceans clean.
+                Avoid throwing waste into water
+                and protect our precious resources.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div class="card-4">
+
+            <img src="protect-forest.jpg" class="forest-img">
+
+            <h2 class="forest">
+                 PROTECT FORESTS
+            </h2>
+
+            <p class="forest-text2">
+
+                Forests provide oxygen, shelter and
+                food for millions of living beings.
+                Protect forests and stop deforestation.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 5 -->
+
+        <div class="card-5">
+
+            <img src="reduce-plastic.jpg" class="plastic-img">
+
+            <h2 class="plastic">
+                 REDUCE PLASTIC
+            </h2>
+
+            <p class="plastic-text">
+
+                Reduce single-use plastic.
+                Choose reusable products and
+                keep our surroundings clean.
+
+            </p>
+
+        </div>
+
+
+        <!-- CARD 6 -->
+
+        <div class="card-6">
+
+            <img src="tree-plantation.jpg" class="tree-img">
+
+            <h2 class="tree">
+                PLANT TREES
+            </h2>
+
+            <p class="tree-text">
+
+                Plant more trees to improve air quality,
+                provide shade, protect wildlife
+                and create a greener planet.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NATURE TIPS -->
+
+    <div class="tips-section">
+
+        <h2 class="save-nature-text">
+             SIMPLE WAYS TO SAVE NATURE
+        </h2>
+
+        <div class="tips">
+
+            <div class="tip-box">
+
+                <h3 class="save-water"> Save Water</h3>
+
+                <p>
+                    Turn off taps when water
+                    is not needed.
+                </p>
+
+            </div>
+
+
+            <div class="tip-box">
+
+                <h3 class="save-energy"> Save Energy</h3>
+
+                <p>
+                    Switch off lights and
+                    electrical appliances.
+                </p>
+
+            </div>
+
+
+            <div class="tip-box">
+
+                <h3 class="reduce-tip"> Reuse</h3>
+
+                <p>
+                    Reuse bags, bottles and
+                    other useful products.
+                </p>
+
+            </div>
+
+
+            <div class="tip-box">
+
+                <h3 class="plant-tree"> Plant Trees</h3>
+
+                <p>
+                    Plant and care for trees
+                    in your surroundings.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUOTE -->
+
+    <div class="nature-quote">
+
+        "The Earth is our home.
+        Protect it today for a better tomorrow." 
+
+    </div>
+
+
+   
+
+    <div class="last-section">
+
+        <h2 class="part-change">
+             Be a Part of the Change
+        </h2>
+
+        <p>
+
+            Every small action matters.
+            Start today by protecting nature,
+            reducing waste and making
+            eco-friendly choices.
+
+        </p>
+
+        <a href="recycling.html" class="last-btn">
+            Start Recycling 
+        </a>
+
+    </div>
+
+
+  
+
+    <a href="recycling.html" class="btn">
+        
+    </a>
+
+
+</div>
+
+</body>
+</html>

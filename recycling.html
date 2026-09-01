@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recycling - Eco Friendly</title>
+
+
+    <style>
+
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+
+
+        .recyling-text {
+
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+
+        
+
+        .recyle-img {
+
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            z-index: 0;
+        }
+
+
+        
+
+        .recyling-text::after {
+
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.38);
+            z-index: 1;
+        }
+
+
+        
+
+        .recycle-content {
+
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            padding: 55px 5% 110px;
+        }
+
+
+        
+        .text-1-recycle {
+
+            color: white;
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 5px black, 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+
+        
+
+        .text-recycle-2 {
+
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 28px;
+            text-shadow: 1px 1px 5px black;
+        }
+
+
+       
+        .three-r {
+
+            width: fit-content;
+            margin: 0 auto 35px;
+            padding: 10px 25px;
+            color: white;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+
+
+
+        .recycle-headings {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            margin-bottom: 15px;
+        }
+
+
+        .recycle-heading {
+
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+
+        .recycle-heading::before {
+
+            content: "• ";
+        }
+
+
+
+
+        .card-parent {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            width: 100%;
+        }
+
+
+       
+        .card-1,
+        .card-2,
+        .card-3 {
+
+            min-height: 330px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.55);
+            border-radius: 15px;
+            background: rgba(0, 30, 50, 0.30);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            transition: 0.4s ease;
+            overflow: hidden;
+        }
+
+
+
+        
+
+        .card-1:hover,
+        .card-2:hover,
+        .card-3:hover {
+
+            transform: translateY(-10px);
+            background: rgba(0, 60, 70, 0.48);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+
+       
+
+        .plastic-img,
+        .reuse-img,
+        .recycle-img-2 {
+
+            display: block;
+            width: 160px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border-radius: 8px;
+            transition: 0.4s ease;
+        }
+
+
+        .card-1:hover .plastic-img,
+        .card-2:hover .reuse-img,
+        .card-3:hover .recycle-img-2 {
+
+            transform: scale(1.06);
+        }
+
+
+
+        .plastic-text,
+        .plastic-2,
+        .plastic-3 {
+
+            color: white;
+            text-align: center;
+            font-size: 23px;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 4px black;
+        }
+
+
+      
+
+        .products,
+        .products-2,
+        .product-3 {
+
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 8px 0;
+
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        .products::before,
+        .products-2::before,
+        .product-3::before {
+
+            content: "✓ ";
+
+            color: #9cff9c;
+
+            font-weight: bold;
+        }
+
+
+     
+
+        .why-recycle {
+
+            margin-top: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.5);
+            background: rgba(0, 40, 50, 0.35);
+            backdrop-filter: blur(7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+        }
+
+
+        .why-recycle h2 {
+
+            font-size: 29px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+
+        .why-intro {
+
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 4px black;
+        }
+
+
+        .why-cards {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .why-card {
+
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.12);
+            transition: 0.3s ease;
+        }
+
+
+        .why-card:hover {
+
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.20);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+
+      
+        .why-icon {
+
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+
+        .why-card h3 {
+
+            font-size: 20px;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 4px black;
+        }
+
+
+        .why-card p {
+
+            font-size: 14px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        
+
+        .recycle-quote {
+
+            margin-top: 35px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-style: italic;
+            border-left: 4px solid #9cff9c;
+            background: rgba(0,0,0,0.25);
+            text-shadow: 1px 1px 4px black;
+        }
+
+
+        
+
+        .btn1 {
+
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-size: 30px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 10;
+            transition: 0.3s ease;
+        }
+
+
+        .btn1:hover {
+
+            background: darkgreen;
+            color: white;
+            transform: translateX(7px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .btn1:before{
+            content:"\2192"
+        }
+        .why-icon-1:before{
+            content:"\1F331"
+        }
+        .why-icon-2:before{
+            content:"\26A1"
+        }
+        .why-icon-3:before{
+            content:"\1F30D"
+        }
+        .recycle-quote:after{
+            content:"\267B"
+        }
+        .three-r:before{
+            content:"\267B"
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            .recycle-content {
+
+                padding: 45px 5% 110px;
+            }
+
+
+            .text-1-recycle {
+
+                font-size: 34px;
+            }
+
+
+            .recycle-headings {
+
+                gap: 20px;
+            }
+
+
+            .recycle-heading {
+
+                font-size: 21px;
+            }
+
+
+            .card-parent {
+
+                gap: 20px;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3 {
+
+                min-height: 320px;
+
+                padding: 15px;
+            }
+
+
+            .plastic-img,
+            .reuse-img,
+            .recycle-img-2 {
+
+                width: 140px;
+
+                height: 140px;
+            }
+
+
+            .why-cards {
+
+                gap: 15px;
+            }
+
+        }
+
+
+       
+        @media (max-width: 768px) {
+
+            .recyling-text {
+
+                min-height: 1700px;
+            }
+
+
+            .recyle-img {
+
+                height: 1700px;
+
+                object-fit: cover;
+            }
+
+
+            .recycle-content {
+
+                padding:
+                    35px
+                    5%
+                    100px;
+            }
+
+
+            .text-1-recycle {
+
+                font-size: 28px;
+
+                line-height: 1.25;
+
+                margin-bottom: 15px;
+            }
+
+
+            .text-recycle-2 {
+
+                font-size: 16px;
+
+                line-height: 1.5;
+
+                margin-bottom: 20px;
+            }
+
+
+            .three-r {
+
+                font-size: 15px;
+
+                padding: 8px 18px;
+
+                margin-bottom: 25px;
+
+                text-align: center;
+            }
+
+
+            /* 3R headings */
+
+            .recycle-headings {
+
+                grid-template-columns: 1fr;
+
+                gap: 10px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .recycle-heading {
+
+                font-size: 20px;
+            }
+
+
+            /* Main cards */
+
+            .card-parent {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                width: 100%;
+
+                max-width: 330px;
+
+                margin: auto;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3 {
+
+                width: 100%;
+
+                min-height: 300px;
+
+                padding: 18px;
+            }
+
+
+            .plastic-img,
+            .reuse-img,
+            .recycle-img-2 {
+
+                width: 150px;
+
+                height: 140px;
+            }
+
+
+            .plastic-text,
+            .plastic-2,
+            .plastic-3 {
+
+                font-size: 21px;
+            }
+
+
+            .products,
+            .products-2,
+            .product-3 {
+
+                font-size: 14px;
+            }
+
+
+            /* Why section */
+
+            .why-recycle {
+
+                margin-top: 35px;
+
+                padding: 25px 15px;
+            }
+
+
+            .why-recycle h2 {
+
+                font-size: 23px;
+            }
+
+
+            .why-intro {
+
+                font-size: 14px;
+
+                line-height: 1.5;
+            }
+
+
+            .why-cards {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .why-card {
+
+                padding: 18px;
+            }
+
+
+            .recycle-quote {
+
+                font-size: 16px;
+
+                line-height: 1.5;
+            }
+
+
+            /* Button */
+
+            .btn1 {
+
+                width: 50px;
+
+                height: 50px;
+
+                right: 20px;
+
+                bottom: 20px;
+
+                font-size: 25px;
+            }
+
+        }
+        .btn1:before{
+            content:"\2192"
+        }
+
+
+        
+
+        @media (max-width: 480px) {
+
+            .recyling-text {
+
+                min-height: 1750px;
+            }
+
+
+            .recyle-img {
+
+                height: 1750px;
+            }
+
+
+            .text-1-recycle {
+
+                font-size: 23px;
+            }
+
+
+            .text-recycle-2 {
+
+                font-size: 14px;
+            }
+
+
+            .three-r {
+
+                font-size: 13px;
+
+                padding: 7px 15px;
+            }
+
+
+            .recycle-heading {
+
+                font-size: 18px;
+            }
+
+
+            .card-parent {
+
+                max-width: 300px;
+
+                gap: 20px;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3 {
+
+                min-height: 290px;
+            }
+
+
+            .plastic-img,
+            .reuse-img,
+            .recycle-img-2 {
+
+                width: 135px;
+
+                height: 125px;
+            }
+
+
+            .plastic-text,
+            .plastic-2,
+            .plastic-3 {
+
+                font-size: 20px;
+            }
+
+
+            .products,
+            .products-2,
+            .product-3 {
+
+                font-size: 13px;
+
+                margin: 6px 0;
+            }
+
+
+            .why-recycle h2 {
+
+                font-size: 21px;
+            }
+
+
+            .why-intro {
+
+                font-size: 13px;
+            }
+
+
+            .why-card h3 {
+
+                font-size: 18px;
+            }
+
+
+            .why-card p {
+
+                font-size: 13px;
+            }
+
+
+            .recycle-quote {
+
+                font-size: 14px;
+
+                padding: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="recyling-text">
+
+        <img
+            src="img2-home.jpg"
+            class="recyle-img"
+            alt="Eco friendly recycling background">
+
+
+        <div class="recycle-content">
+
+
+            
+
+            <h1 class="text-1-recycle">
+                RECYCLE FOR A BETTER TOMORROW
+            </h1>
+
+
+            
+
+            <p class="text-recycle-2">
+                “Together, let's reduce waste and protect our planet.”
+            </p>
+
+
+           
+
+            <div class="three-r">
+                 3R — Reduce • Reuse • Recycle
+            </div>
+
+
+           
+
+            <div class="recycle-headings">
+
+                <h2 class="recycle-heading">
+                    REDUCE WASTE
+                </h2>
+
+                <h2 class="recycle-heading">
+                    REUSE
+                </h2>
+
+                <h2 class="recycle-heading">
+                    RECYCLE
+                </h2>
+
+            </div>
+
+
+           
+            <div class="card-parent">
+
+
+                <!-- CARD 1 -->
+
+                <div class="card-1">
+
+                    <img
+                        src="plastic-img.jpg"
+                        class="plastic-img"
+                        alt="Plastic waste"
+                    >
+
+                    <h2 class="plastic-text">
+                        Plastic
+                    </h2>
+
+                    <p class="products">
+                        Avoid single-use plastics
+                    </p>
+
+                    <p class="products">
+                        Buy only what you need
+                    </p>
+
+                    <p class="products">
+                        Use less paper
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="card-2">
+
+                    <img
+                        src="reuse-img-2.jpg"
+                        class="reuse-img"
+                        alt="Reuse paper"
+                    >
+
+                    <h2 class="plastic-2">
+                        PAPER
+                    </h2>
+
+                    <p class="products-2">
+                        Reuse shopping bags
+                    </p>
+
+                    <p class="products-2">
+                        Reuse glass bottles
+                    </p>
+
+                    <p class="products-2">
+                        Donate old clothes
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="card-3">
+
+                    <img
+                        src="recycle-img.jpg"
+                        class="recycle-img-2"
+                        alt="Recycle smart"
+                    >
+
+                    <h2 class="plastic-3">
+                        RECYCLE SMART
+                    </h2>
+
+                    <p class="product-3">
+                        Recycle plastic bottles
+                    </p>
+
+                    <p class="product-3">
+                        Recycle paper and cardboard
+                    </p>
+
+                    <p class="product-3">
+                        Recycle glass containers
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+           
+
+            <section class="why-recycle">
+
+                <h2>
+                    WHY RECYCLING MATTERS?
+                </h2>
+
+
+                <p class="why-intro">
+                    Small recycling habits can make a big difference for our planet.
+                </p>
+
+
+                <div class="why-cards">
+
+
+                    <!-- WHY CARD 1 -->
+
+                    <div class="why-card">
+
+                       
+
+                        <h3 class="why-icon-1">
+                            Protect Nature
+                        </h3>
+
+                        <p>
+                            Recycling helps reduce pollution
+                            and protects our natural resources.
+                        </p>
+
+                    </div>
+
+
+                    <!-- WHY CARD 2 -->
+
+                    <div class="why-card">
+
+                        
+
+                        <h3 class="why-icon-2">
+                            Save Energy
+                        </h3>
+
+                        <p>
+                            Recycling materials requires less
+                            energy than producing new ones.
+                        </p>
+
+                    </div>
+
+
+                    <!-- WHY CARD 3 -->
+
+                    <div class="why-card">
+
+                        
+
+                        <h3 class="why-icon-3">
+                            Reduce Waste
+                        </h3>
+
+                        <p>
+                            Recycling keeps useful materials
+                            away from landfills and reduces waste.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <div class="recycle-quote">
+
+                “Recycle today for a cleaner,
+                greener and healthier tomorrow.”
+
+            </div>
+
+
+        </div>
+
+
+       
+
+        <a href="treeplantation.html"class="btn1" title="Go to Tree Plantation">
+            
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>

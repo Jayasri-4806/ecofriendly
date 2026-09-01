@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Earth Pulse</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("img2-home.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Georgia, 'Times New Roman', serif;
+            padding: 30px 20px;
+            overflow-x: hidden;
+        }
+
+
+      
+
+        .about-page {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+
+     
+
+        .about-text {
+            text-align: center;
+            padding: 20px 10px 30px;
+        }
+
+        .about-text2 {
+            color: white;
+            font-size: 40px;
+            line-height: 1.3;
+            text-shadow: 2px 2px 5px black;
+        }
+
+
+       
+
+        .card-parent {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 50px;
+            padding: 20px;
+        }
+
+
+
+        .card-1,
+        .card-2,
+        .card-3,
+        .card-4,
+        .card-5,
+        .card-6 {
+
+            width: 400px;
+            min-height: 330px;
+            border: 2px solid rgba(0, 0, 0, 0.8);
+            background: rgba(0, 40, 60, 0.25);
+            backdrop-filter: blur(3px);
+            text-align: center;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+
+      
+
+        .card-1:hover,
+        .card-2:hover,
+        .card-3:hover,
+        .card-4:hover,
+        .card-5:hover,
+        .card-6:hover {
+
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: white;
+        }
+
+
+        
+        .card-1 img,
+        .card-2 img,
+        .card-3 img,
+        .card-4 img,
+        .card-5 img,
+        .card-6 img {
+
+            display: block;
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            object-fit: cover;
+        }
+
+
+        
+
+        .card1-text,
+        .card2-text,
+        .card3-text,
+        .card4-text,
+        .card5-text,
+        .card6-text {
+
+            color: yellow;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 5px 10px 8px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        
+
+        .card1-text::before {
+            content: "👥 ";
+        }
+
+        .card2-text::before {
+            content: "🎯 ";
+        }
+
+        .card3-text::before {
+            content: "💨 ";
+        }
+
+        .card4-text::before {
+            content: "♻️ ";
+        }
+
+        .card5-text::before {
+            content: "🐾 ";
+        }
+
+        .card6-text::before {
+            content: "⚡ ";
+        }
+
+
+      
+
+        .aboutus,
+        .mission,
+        .reduce,
+        .green,
+        .protect,
+        .renew {
+
+            color: white;
+            font-size: 15px;
+            line-height: 1.5;
+            padding: 0 20px 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px black;
+        }
+
+
+      
+        .vision-section {
+
+            width: 90%;
+            max-width: 1000px;
+            margin: 70px auto 100px;
+            padding: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+
+        
+
+        .vision-section h2 {
+
+            color: yellow;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+
+        
+        .vision-section > p {
+
+            color: white;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 850px;
+            margin: auto;
+            text-shadow: 1px 1px 2px black;
+        }
+
+
+        
+
+        .vision-points {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+        }
+
+
+        .vision-box {
+
+            width: 250px;
+
+            padding: 25px 20px;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            border-radius: 15px;
+
+            transition: 0.3s ease;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+
+        .vision-box:hover {
+
+            transform: translateY(-8px);
+
+            background: rgba(255, 255, 255, 0.25);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .vision-box h3 {
+
+            color: yellow;
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        .vision-box p {
+
+            color: white;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            text-shadow: 1px 1px 2px black;
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+
+            margin-top: 30px;
+
+            font-size: 20px;
+
+            font-style: italic;
+
+            color: white;
+
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        
+
+        .btn1 {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background-color: white;
+
+            color: black;
+
+            text-decoration: none;
+
+            font-size: 28px;
+
+            border-radius: 50%;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+            z-index: 1000;
+
+            transition: 0.3s ease;
+        }
+
+
+        .btn1:hover {
+
+           
+background-color: darkgreen;
+
+            color: white;
+
+            transform: translateX(5px);
+        }
+        .our-vission:before{
+            content:"\1F331"
+        }
+        .our-vission-2:before{
+            content:"\1F30D"
+        }
+        .our-vission-3:before{
+            content:"\267B"
+        }
+        .btn1:before{
+            content:"\2192"
+        }
+
+
+       
+
+        @media (min-width: 601px) and (max-width: 1000px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+
+            .about-text2 {
+                font-size: 32px;
+            }
+
+
+            .card-parent {
+
+                gap: 30px;
+
+                padding: 15px;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4,
+            .card-5,
+            .card-6 {
+
+                width: 45%;
+
+                min-height: 320px;
+            }
+
+
+            .card-1 img,
+            .card-2 img,
+            .card-3 img,
+            .card-4 img,
+            .card-5 img,
+            .card-6 img {
+
+                height: 180px;
+            }
+
+
+            .vision-section {
+
+                width: 90%;
+
+                margin-top: 60px;
+            }
+        }
+
+
+    
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 15px 10px;
+
+                background-attachment: scroll;
+            }
+
+
+            .about-page {
+
+                width: 100%;
+            }
+
+
+            /* TITLE */
+
+            .about-text {
+
+                padding: 15px 5px 20px;
+            }
+
+
+            .about-text2 {
+
+                font-size: 25px;
+
+                line-height: 1.4;
+
+                text-align: center;
+            }
+
+
+            /* CARDS */
+
+            .card-parent {
+
+                width: 100%;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                justify-content: center;
+
+                gap: 25px;
+
+                padding: 10px 0;
+            }
+
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4,
+            .card-5,
+            .card-6 {
+
+                width: 95%;
+
+                max-width: 350px;
+
+                min-height: 0;
+
+                height: auto;
+
+                margin: 0 auto;
+            }
+
+
+            /* MOBILE IMAGES */
+
+            .card-1 img,
+            .card-2 img,
+            .card-3 img,
+            .card-4 img,
+            .card-5 img,
+            .card-6 img {
+
+                width: 100%;
+
+                height: 180px;
+
+                padding: 12px;
+
+                object-fit: cover;
+            }
+
+
+            /* MOBILE TITLES */
+
+            .card1-text,
+            .card2-text,
+            .card3-text,
+            .card4-text,
+            .card5-text,
+            .card6-text {
+
+                font-size: 18px;
+
+                margin-top: 5px;
+            }
+
+
+            /* MOBILE TEXT */
+
+            .aboutus,
+            .mission,
+            .reduce,
+            .green,
+            .protect,
+            .renew {
+
+                font-size: 14px;
+
+                line-height: 1.5;
+
+                padding: 0 15px 18px;
+            }
+
+
+            /* VISION */
+
+            .vision-section {
+
+                width: 95%;
+
+                margin: 50px auto 80px;
+
+                padding: 25px 15px;
+
+                border-radius: 20px;
+            }
+
+
+            .vision-section h2 {
+
+                font-size: 25px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .vision-section > p {
+
+                font-size: 14px;
+
+                line-height: 1.6;
+            }
+
+
+            /* VISION BOXES */
+
+            .vision-points {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 15px;
+
+                margin-top: 25px;
+            }
+
+
+            .vision-box {
+
+                width: 100%;
+
+                max-width: 300px;
+
+                padding: 20px 15px;
+            }
+
+
+            .vision-box h3 {
+
+                font-size: 18px;
+            }
+
+
+            .vision-box p {
+
+                font-size: 14px;
+            }
+
+
+            /* QUOTE */
+
+            .quote {
+
+                font-size: 16px;
+
+                line-height: 1.5;
+            }
+
+
+            /* NEXT BUTTON */
+
+            .btn1 {
+
+                width: 50px;
+
+                height: 50px;
+
+                right: 15px;
+
+                bottom: 15px;
+
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="about-page">
+
+
+        <!-- TITLE -->
+
+        <div class="about-text">
+
+            <h1 class="about-text2">
+                Creating a Greener Tomorrow Together
+            </h1>
+
+        </div>
+
+
+
+       
+
+        <div class="card-parent">
+
+
+            <!-- CARD 1 -->
+
+            <div class="card-1">
+
+                <img src="us-img.jpg">
+
+                <h3 class="card1-text">
+                    About Us
+                </h3>
+
+                <p class="aboutus">
+                    This website was created to spread awareness
+                    about nature conservation and sustainable living.
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="card-2">
+
+                <img src="about-img1.jpg">
+
+                <h3 class="card2-text">
+                    Our Mission
+                </h3>
+
+                <p class="mission">
+                    Our mission is to educate and encourage everyone
+                    to protect the environment, conserve water,
+                    and protect wildlife.
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="card-3">
+
+                <img src="reducepol.jpg">
+
+                <h3 class="card3-text">
+                    Reduce Pollution
+                </h3>
+
+                <p class="reduce">
+                    Pollution harms our environment, wildlife,
+                    and human health. Small changes in our daily
+                    habits can create a healthier and greener planet.
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="card-4">
+
+                <img src="greenliv.avif">
+
+                <h3 class="card4-text">
+                    Green Living
+                </h3>
+
+                <p class="green">
+                    Live sustainably by saving energy,
+                    reducing waste, using reusable products,
+                    and caring for nature every day.
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 5 -->
+
+            <div class="card-5">
+
+                <img src="wildlife.webp">
+
+                <h3 class="card5-text">
+                    Protect Wildlife
+                </h3>
+
+                <p class="protect">
+                    Protect wildlife by conserving forests,
+                    protecting habitats, and reducing pollution.
+                    Every action helps preserve biodiversity.
+                </p>
+
+            </div>
+
+
+
+            <!-- CARD 6 -->
+
+            <div class="card-6">
+
+                <img src="renew.webp">
+
+                <h3 class="card6-text">
+                    Renewable Energy
+                </h3>
+
+                <p class="renew">
+                    Renewable energy comes from natural sources
+                    like the sun and wind. Using clean energy
+                    helps reduce pollution and protect the environment.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="vision-section">
+
+
+        <h2 class="our-vission">
+             Our Vision
+        </h2>
+
+
+        <p>
+            We believe that protecting nature starts with simple actions.
+            By saving water, reducing waste, planting trees,
+            protecting wildlife, and using clean energy,
+            we can create a healthier and greener future.
+        </p>
+
+
+
+        <div class="vision-points">
+
+
+            <div class="vision-box">
+
+                <h3 class="our-vission-2">
+                     Protect
+                </h3>
+
+                <p>
+                    Protect our environment and natural resources
+                    for future generations.
+                </p>
+
+            </div>
+
+
+
+            <div class="vision-box">
+
+                <h3 class="our-vission-3">
+                     Reduce
+                </h3>
+
+                <p>
+                    Reduce waste and pollution through
+                    responsible daily habits.
+                </p>
+
+            </div>
+
+
+
+            <div class="vision-box">
+
+                <h3 class="our-vission">
+                     Grow
+                </h3>
+
+                <p>
+                    Grow a greener, healthier and
+                    sustainable future together.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <p class="quote">
+            "Small actions today can create a greener tomorrow."
+        </p>
+
+
+    </div>
+
+
+
+    <!-- NEXT PAGE BUTTON -->
+
+    <a href="savenature.html" class="btn1">
+        
+    </a>
+
+
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <title>Contact Us - Eco Friendly</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+
+           
+            background-image:
+                linear-gradient(
+                    rgba(220, 245, 235, 0.82),
+                    rgba(220, 245, 235, 0.82)
+                ),
+                url("contact-bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+            color: #222;
+        }
+
+
+        
+
+        .contact-container{
+            min-height: 100vh;
+            padding: 60px 8%;
+        }
+
+
+        
+        .contact-heading{
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .contact-heading h1{
+            color: #146b3a;
+            font-size: 48px;
+            margin-bottom: 12px;
+            text-shadow: 1px 2px 3px rgba(0,0,0,0.15);
+        }
+
+        .contact-heading p{
+            color: #345;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+
+
+        .contact-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        .contact-card{
+            background: rgba(255,255,255,0.94);
+            padding: 35px;
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
+
+            transition: 0.4s;
+        }
+
+        .contact-card:hover{
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px rgba(0,0,0,0.22);
+        }
+
+
+        
+
+        .contact-card h2{
+            color: #146b3a;
+            font-size: 28px;
+            margin-bottom: 28px;
+        }
+
+
+      
+        .form-group{
+            margin-bottom: 20px;
+        }
+
+        .form-group label{
+            display: block;
+            margin-bottom: 8px;
+
+            color: #185c38;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea{
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid #c8d8ce;
+            border-radius: 10px;
+
+            font-size: 16px;
+            outline: none;
+
+            background: #ffffff;
+
+            transition: 0.3s;
+        }
+
+        .form-group textarea{
+            min-height: 130px;
+            resize: vertical;
+        }
+
+
+        /* INPUT FOCUS */
+
+        .form-group input:focus,
+        .form-group textarea:focus{
+            border-color: #168b4f;
+
+            box-shadow:
+                0 0 0 3px rgba(22,139,79,0.12);
+        }
+
+
+        
+        .send-btn{
+            border: none;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            background: #168b4f;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.18);
+        }
+
+        .send-btn:hover{
+            background: #0d6738;
+            transform: scale(1.05);
+        }
+
+
+       
+
+        .info-box{
+            display: flex;
+            align-items: flex-start;
+
+            gap: 15px;
+
+            padding: 16px;
+
+            margin-bottom: 15px;
+
+            border-radius: 12px;
+
+            background: #f0faf4;
+
+            transition: 0.3s;
+        }
+
+        .info-box:hover{
+            background: #e2f5e9;
+            transform: translateX(5px);
+        }
+
+
+        /* SYMBOL */
+
+        .info-icon{
+            min-width: 42px;
+            height: 42px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #d7f1e1;
+
+            font-size: 22px;
+        }
+
+
+        .info-text h3{
+            color: #146b3a;
+            font-size: 19px;
+            margin-bottom: 4px;
+        }
+
+        .info-text p{
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .info-text a{
+            color: #333;
+            text-decoration: none;
+        }
+
+        .info-text a:hover{
+            color: #168b4f;
+        }
+
+
+        
+
+        .eco-message{
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #e5f8ec,
+                #d6f2e2
+            );
+
+            text-align: center;
+        }
+
+        .eco-message h3{
+            color: #146b3a;
+            margin-bottom: 8px;
+        }
+
+        .eco-message p{
+            color: #345;
+            line-height: 1.6;
+        }
+
+
+       
+        .contact-quote{
+            max-width: 900px;
+
+            margin: 40px auto 0;
+
+            text-align: center;
+
+            color: #146b3a;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            line-height: 1.6;
+        }
+
+
+       
+
+        .left-arrow{
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #168b4f;
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 24px;
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .left-arrow:hover{
+            background: #0d6738;
+            transform: translateY(-5px);
+        }
+        .contact-text-1:before{
+            content:"\1F33F"
+        }
+        .contact-text-2:after{
+            content:"\1F30D"
+        }
+        .contact-text-3:before{
+            content:"\1F4E9"
+        }
+        .text-1cont:before{
+            content:"\1F464"
+        }
+        .text-2cont:before{
+            content:"\1F4E7"
+        }
+        .text-3cont:before{
+            content:"\1F4DE"
+        }
+        .text-4cont:before{
+            content:"\1F4AC"
+        }
+        .send-btn:before{
+            content:"\1F4E9"
+        }
+        .phone-text:before{
+            content:"\1F4DE"
+        }
+        .info-icon-1:before{
+            content:"\1F4CD"
+        }
+        .info-icon-2:before{
+            content:"\1F4E7"
+        }
+        .info-icon-3:before{
+            content:"\1F4DE"
+        }
+        .info-icon-4:before{
+            content:"\1F91D"
+        }
+        .joinus-text:after{
+            content:"\1F30D"
+        }
+        .location-text:before{
+            content:"\1F3311"
+        }
+        .eco-message-text:before{
+            content:"\1F331"
+        }
+        .para-1:after{
+            content:"\01F49A"
+        }
+        .contact-quote:after{
+            content:"\1F30D"
+        }
+        .contact-quote:before{
+            content:"\1F33F"
+        }
+
+
+        
+
+        @media(max-width:900px){
+
+            .contact-container{
+                padding: 50px 5%;
+            }
+
+            .contact-heading h1{
+                font-size: 40px;
+            }
+
+            .contact-content{
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media(max-width:600px){
+
+            .contact-container{
+                padding: 35px 15px;
+            }
+
+            .contact-heading{
+                margin-bottom: 30px;
+            }
+
+            .contact-heading h1{
+                font-size: 32px;
+            }
+
+            .contact-heading p{
+                font-size: 16px;
+            }
+
+            .contact-content{
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-card{
+                padding: 22px;
+                border-radius: 18px;
+            }
+
+            .contact-card h2{
+                font-size: 23px;
+            }
+
+            .form-group input,
+            .form-group textarea{
+                font-size: 15px;
+            }
+
+            .send-btn{
+                width: 100%;
+            }
+
+            .contact-quote{
+                font-size: 17px;
+            }
+
+            .top-arrow{
+                width: 42px;
+                height: 42px;
+
+                right: 15px;
+                bottom: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+    <section class="contact-container">
+
+
+     
+
+        <div class="contact-heading">
+
+            <h1 class="contact-text-1"> Get In Touch</h1>
+
+            <p class="contact-text-2">
+                Have a question? Let's work together
+                for a greener and healthier future. 
+            </p>
+
+        </div>
+
+
+
+
+        <div class="contact-content">
+
+
+           
+
+            <div class="contact-card">
+
+                <h2 class="contact-text-3"> Send Us a Message</h2>
+
+
+                <form>
+
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                           <p class="text-1cont">  Your Name</p>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                 
+                    <div class="form-group">
+
+                        <label for="email">
+                            <p class="text-2cont">Your Email</p>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                 
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            <p class="text-3cont"> Phone Number</p>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+
+               
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            <p class="text-4cont">Your Message</p>
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="send-btn">
+                         Send Message
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+
+
+            <div class="contact-card">
+
+                <h2 class="phone-text"> Contact Information</h2>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-icon-1">
+                        
+                    </div>
+
+                    <div class="info-text">
+
+                        <h3>Location</h3>
+
+                        <p class="location-text">
+                            Tamil Nadu, India 
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                
+
+                <div class="info-box">
+
+                    <div class="info-icon-2">
+                      
+                    </div>
+
+                    <div class="info-text">
+
+                        <h3>Email</h3>
+
+                        <p>
+                            <a href="mailto:ecofriendly@gmail.com">
+                                ecofriendly@gmail.com
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-icon-3">
+                        
+                    </div>
+
+                    <div class="info-text">
+
+                        <h3>Phone</h3>
+
+                        <p>
+                            <a href="tel:+919876543210">
+                                +91 98765 43210
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-box">
+
+                    <div class="info-icon-4">
+                       
+                    </div>
+
+                    <div class="info-text">
+
+                        <h3>Join Us</h3>
+
+                        <p class="joinus-text">
+                            Together, let's protect our planet. 
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+               
+
+                <div class="eco-message">
+
+                    <h3 class="eco-message-text"> Be Part of the Change</h3>
+
+                    <p class="para-1">
+                        Small actions can create a big impact.
+                        Let's protect nature and build a
+                        sustainable future together. 
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+       
+
+        <div class="contact-quote">
+
+             “The Earth is what we all have in common.
+            Let's protect it for future generations.” 
+
+        </div>
+
+
+    </section>
+
+
+
+    
+
+    <a href="home1.html" class="left-arrow">
+        ←
+    </a>
+
+
+</body>
+</html>
+

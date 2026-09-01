@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* MAIN CONTAINER */
+
+.water-con{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 40px 5%;
+}
+
+/* BACKGROUND IMAGE */
+
+.water-img-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* DARK OVERLAY */
+
+.water-con::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 50, 80, 0.45);
+    z-index: -1;
+}
+
+/* HEADING */
+
+.water-text-1{
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    margin: 10px 0;
+    text-shadow: 3px 3px 8px black;
+}
+
+/* SUB TITLE */
+
+.water-sub{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin: 10px auto 35px;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* CARDS */
+
+.card-parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CARD */
+
+.card-2{
+    background: rgba(255,255,255,0.90);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: 0.4s;
+    min-height: 230px;
+}
+
+.card-2:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* CARD ICON */
+
+.card-icon{
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+/* CARD HEADING */
+
+.head-1,
+.head-2,
+.head-3{
+    color: #0077b6;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* CARD TEXT */
+
+.water-text{
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* TIPS SECTION */
+
+.water-tips{
+    max-width: 900px;
+    margin: 45px auto 0;
+    background: rgba(255,255,255,0.92);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.water-tips h2{
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+.tips-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+    text-align: left;
+}
+
+.tip{
+    background: #e8f8ff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    color: #034f6d;
+    font-weight: bold;
+}
+
+/* BUTTON */
+
+.water-button{
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 14px 30px;
+    background: #00a8e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.water-button:hover{
+    background: #0077b6;
+    transform: scale(1.05);
+}
+.next-arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 25px auto 0;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.9);
+    color: #0077b6;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    animation: arrowMove 1.5s infinite;
+
+    transition: 0.3s;
+}
+
+.next-arrow:hover{
+    background: #0077b6;
+    color: white;
+    transform: scale(1.1);
+}
+.water-text-1:before{
+    content:"\1F4A7"
+}
+.water-sub:after{
+    content:"\1F4A7"
+}
+.card-icon-1:before{
+    content:"\1F4A7"
+}
+.card-icon-2:before{
+    content:"\1F331"
+}
+.card-icon-3:before{
+    content:"\1F30E"
+}
+.water-text-2:before{
+    content:"\1F30A"
+}
+.tip-1:before{
+    content:"\1F4A7"
+}
+.tip-2:before{
+    content:"\1F6BF"
+}
+.tip-3:before{
+    content:"\1F331"
+}
+.tip-4:before{
+    content:"\1F527"
+}
+.tip-5:before{
+    content:"\01FAA3"
+}
+.tip-6:before{
+    content:"\1F6B0"
+}
+.water-button:before{
+    content:"\1F499"
+}
+
+
+
+
+@keyframes arrowMove{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(8px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+
+
+@media(max-width:900px){
+
+    .water-text-1{
+        font-size: 40px;
+    }
+
+    .card-parent{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    .water-con{
+        padding: 25px 15px;
+    }
+
+    .water-text-1{
+        font-size: 32px;
+    }
+
+    .water-sub{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .card-parent{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card-2{
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .water-tips{
+        padding: 20px 15px;
+    }
+
+    .tips-list{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="water-con">
+
+   
+
+    <img src="img2-home.jpg" class="water-img-1">
+
+
+
+    <h1 class="water-text-1">
+        Save Water, Save Life
+    </h1>
+
+    <h3 class="water-sub">
+        “Every Drop Counts, Save Water for a Better Future.” 
+    </h3>
+
+
+
+    <div class="card-parent">
+
+        <!-- CARD 1 -->
+
+        <div class="card-2">
+
+            <h1 class="card-icon-1">
+                
+            </h1>
+
+            <h2 class="head-1">
+                SAVE EVERY DROP
+            </h2>
+
+            <p class="water-text">
+                Avoid unnecessary water wastage.
+                Turn off taps when water is not needed
+                and use water wisely.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="card-2">
+
+            <h1 class="card-icon-2">
+            
+            </h1>
+
+            <h2 class="head-2">
+                PROTECT WATER
+            </h2>
+
+            <p class="water-text">
+                Keep rivers, lakes and ponds clean.
+                Protect natural water sources for
+                future generations.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="card-2">
+
+            <h1 class="card-icon-3">
+                
+            </h1>
+
+            <h2 class="head-3">
+                SAVE OUR FUTURE
+            </h2>
+
+            <p class="water-text">
+                Saving water helps protect nature,
+                reduce energy usage and create
+                a healthier planet.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- WATER SAVING TIPS -->
+
+    <div class="water-tips">
+
+        <h2 class="water-text-2">
+             Simple Ways to Save Water
+        </h2>
+
+        <div class="tips-list">
+
+            <div class="tip-1">
+                 Turn off the tap while brushing.
+            </div>
+
+            <div class="tip-2">
+                Take shorter showers.
+            </div>
+
+            <div class="tip-3">
+                 Water plants in the morning.
+            </div>
+
+            <div class="tip-4">
+                 Repair leaking taps quickly.
+            </div>
+
+            <div class="tip-5">
+                 Reuse water whenever possible.
+            </div>
+
+            <div class="tip-6">
+                Avoid unnecessary water usage.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUTTON -->
+
+    <a href="contacteco.html" class="water-button">
+         Start Saving Water Today
+    </a>
+    <!-- NEXT PAGE ARROW -->
+
+<a href="contacteco.html" class="next-arrow">
+     →
+</a>
+
+</div>
+
+</body>
+</html>
