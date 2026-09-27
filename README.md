@@ -78,10 +78,25 @@ A simple contact page where users can submit their name, email, and message.
 * No backend required
 
 ---
-
 ## 📸 Screenshots
 
----
+### Home Page
+![Home](images/home.png)
+
+### About Page
+![About](images/about.png)
+
+### Recycling Page
+![Recycling](images/recycling.png)
+
+### Tree Plantation Page
+![Tree](images/tree.png)
+
+### Water Conservation Page
+![Water](images/water.png)
+
+### Contact Page
+![Contact](images/contact.png)
 
 ## 🚀 Future Enhancements
 
